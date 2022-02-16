@@ -3,13 +3,13 @@ import React, { FC, useEffect, useState } from "react";
 import { IUser } from "../types/types";
 import { useParams, useNavigate } from "react-router-dom";
 
-interface UserItemPageParams {
+type UserItemPageParams = {
   id: string;
-}
+};
 
 const UserItemPage: FC = () => {
   const [user, setUser] = useState<IUser | null>(null);
-  const params = useParams<{ id: string }>();
+  const params = useParams<UserItemPageParams>();
   const navigate = useNavigate();
 
   useEffect(() => {
